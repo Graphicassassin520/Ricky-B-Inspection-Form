@@ -15,37 +15,37 @@
         <div class="progress my-4">
             <div class="progress-bar" role="progressbar" style="width: 0%;" id="formProgress"></div>
         </div>
-        <form id="inspectionForm" class="needs-validation" novalidate>
+        <form id="inspectionForm" class="needs-validation" novalidate action="/generate-pdf" method="post" enctype="multipart/form-data">
             <!-- Section 1: Vehicle Information -->
             <div class="form-section active" data-step="1">
                 <h4>Vehicle Information</h4>
                 <div class="mb-3">
-                    <label for="inspectionDate" class="form-label">Date Inspected <span data-bs-toggle="tooltip" title="Select the date the vehicle was inspected.">?</span></label>
+                    <label for="inspectionDate" class="form-label">Date Inspected</label>
                     <input type="date" class="form-control" id="inspectionDate" name="inspectionDate" required>
                     <div class="invalid-feedback">Please select a date.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="vehicleYear" class="form-label">Vehicle Year <span data-bs-toggle="tooltip" title="Enter the year of the vehicle.">?</span></label>
+                    <label for="vehicleYear" class="form-label">Vehicle Year</label>
                     <input type="number" class="form-control" id="vehicleYear" name="vehicleYear" required>
                     <div class="invalid-feedback">Please enter the vehicle year.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="vehicleMake" class="form-label">Vehicle Make <span data-bs-toggle="tooltip" title="Enter the make of the vehicle (e.g., Toyota, Ford).">?</span></label>
+                    <label for="vehicleMake" class="form-label">Vehicle Make</label>
                     <input type="text" class="form-control" id="vehicleMake" name="vehicleMake" required>
                     <div class="invalid-feedback">Please enter the vehicle make.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="vehicleModel" class="form-label">Vehicle Model <span data-bs-toggle="tooltip" title="Enter the model of the vehicle (e.g., Camry, F-150).">?</span></label>
+                    <label for="vehicleModel" class="form-label">Vehicle Model</label>
                     <input type="text" class="form-control" id="vehicleModel" name="vehicleModel" required>
                     <div class="invalid-feedback">Please enter the vehicle model.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="vinNumber" class="form-label">VIN Number <span data-bs-toggle="tooltip" title="Enter the full Vehicle Identification Number (VIN).">?</span></label>
+                    <label for="vinNumber" class="form-label">VIN Number</label>
                     <input type="text" class="form-control" id="vinNumber" name="vinNumber" required>
                     <div class="invalid-feedback">Please enter the VIN number.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="inspectorName" class="form-label">Inspector's Name <span data-bs-toggle="tooltip" title="Enter the name of the inspector.">?</span></label>
+                    <label for="inspectorName" class="form-label">Inspector's Name</label>
                     <input type="text" class="form-control" id="inspectorName" name="inspectorName" required>
                     <div class="invalid-feedback">Please enter the inspector's name.</div>
                 </div>
@@ -56,7 +56,7 @@
             <div class="form-section" data-step="2">
                 <h4>Exterior Condition</h4>
                 <div class="mb-3">
-                    <label>Body Panels <span data-bs-toggle="tooltip" title="Check the body panels for any damage or issues.">?</span></label>
+                    <label>Body Panels</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="bodyPanels" id="bodyPanelsPass" value="Pass" required>
                         <label class="form-check-label" for="bodyPanelsPass">Pass</label>
@@ -68,7 +68,7 @@
                     <div class="invalid-feedback">Please select an option.</div>
                 </div>
                 <div class="mb-3">
-                    <label>Glass <span data-bs-toggle="tooltip" title="Check the condition of the vehicle's glass (windshield, side windows, rear window).">?</span></label>
+                    <label>Glass</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="glass" id="glassPass" value="Pass" required>
                         <label class="form-check-label" for="glassPass">Pass</label>
@@ -80,7 +80,7 @@
                     <div class="invalid-feedback">Please select an option.</div>
                 </div>
                 <div class="mb-3">
-                    <label>Lights <span data-bs-toggle="tooltip" title="Check the condition and functionality of the vehicle's lights (headlights, tail lights, turn signals).">?</span></label>
+                    <label>Lights</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="lights" id="lightsPass" value="Pass" required>
                         <label class="form-check-label" for="lightsPass">Pass</label>
@@ -92,7 +92,7 @@
                     <div class="invalid-feedback">Please select an option.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="exteriorNotes" class="form-label">Other Notes <span data-bs-toggle="tooltip" title="Any additional notes regarding the exterior condition of the vehicle.">?</span></label>
+                    <label for="exteriorNotes" class="form-label">Other Notes</label>
                     <textarea class="form-control" id="exteriorNotes" name="exteriorNotes" rows="3"></textarea>
                 </div>
                 <button type="button" class="btn btn-secondary" onclick="previousSection()">Previous</button>
@@ -103,7 +103,7 @@
             <div class="form-section" data-step="3">
                 <h4>Interior Condition</h4>
                 <div class="mb-3">
-                    <label>Seats <span data-bs-toggle="tooltip" title="Check the condition of the seats.">?</span></label>
+                    <label>Seats</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="seats" id="seatsPass" value="Pass" required>
                         <label class="form-check-label" for="seatsPass">Pass</label>
@@ -115,7 +115,7 @@
                     <div class="invalid-feedback">Please select an option.</div>
                 </div>
                 <div class="mb-3">
-                    <label>Dashboard <span data-bs-toggle="tooltip" title="Check the condition of the dashboard and the functionality of its instruments.">?</span></label>
+                    <label>Dashboard</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="dashboard" id="dashboardPass" value="Pass" required>
                         <label class="form-check-label" for="dashboardPass">Pass</label>
@@ -127,7 +127,7 @@
                     <div class="invalid-feedback">Please select an option.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="interiorNotes" class="form-label">Other Notes <span data-bs-toggle="tooltip" title="Any additional notes regarding the interior condition of the vehicle.">?</span></label>
+                    <label for="interiorNotes" class="form-label">Other Notes</label>
                     <textarea class="form-control" id="interiorNotes" name="interiorNotes" rows="3"></textarea>
                 </div>
                 <button type="button" class="btn btn-secondary" onclick="previousSection()">Previous</button>
@@ -138,7 +138,7 @@
             <div class="form-section" data-step="4">
                 <h4>Mechanical Condition</h4>
                 <div class="mb-3">
-                    <label>Engine <span data-bs-toggle="tooltip" title="Check the condition of the engine.">?</span></label>
+                    <label>Engine</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="engine" id="enginePass" value="Pass" required>
                         <label class="form-check-label" for="enginePass">Pass</label>
@@ -150,7 +150,7 @@
                     <div class="invalid-feedback">Please select an option.</div>
                 </div>
                 <div class="mb-3">
-                    <label>Transmission <span data-bs-toggle="tooltip" title="Check the condition of the transmission.">?</span></label>
+                    <label>Transmission</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="transmission" id="transmissionPass" value="Pass" required>
                         <label class="form-check-label" for="transmissionPass">Pass</label>
@@ -162,7 +162,7 @@
                     <div class="invalid-feedback">Please select an option.</div>
                 </div>
                 <div class="mb-3">
-                    <label>Brakes <span data-bs-toggle="tooltip" title="Check the condition of the brakes.">?</span></label>
+                    <label>Brakes</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="brakes" id="brakesPass" value="Pass" required>
                         <label class="form-check-label" for="brakesPass">Pass</label>
@@ -174,55 +174,43 @@
                     <div class="invalid-feedback">Please select an option.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="mechanicalNotes" class="form-label">Other Notes <span data-bs-toggle="tooltip" title="Any additional notes regarding the mechanical condition of the vehicle.">?</span></label>
+                    <label for="mechanicalNotes" class="form-label">Other Notes</label>
                     <textarea class="form-control" id="mechanicalNotes" name="mechanicalNotes" rows="3"></textarea>
                 </div>
                 <button type="button" class="btn btn-secondary" onclick="previousSection()">Previous</button>
                 <button type="button" class="btn btn-primary" onclick="nextSection()">Next</button>
             </div>
 
-            <!-- Section 5: Test Drive Results -->
+            <!-- Section 5: Road Test Observations -->
             <div class="form-section" data-step="5">
-                <h4>Test Drive Results</h4>
+                <h4>Road Test Observations</h4>
                 <div class="mb-3">
-                    <label>Acceleration <span data-bs-toggle="tooltip" title="Evaluate the vehicle's acceleration during the test drive.">?</span></label>
+                    <label>Engine Operation</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="acceleration" id="accelerationPass" value="Pass" required>
-                        <label class="form-check-label" for="accelerationPass">Pass</label>
+                        <input class="form-check-input" type="radio" name="engineOperation" id="engineOperationPass" value="Pass" required>
+                        <label class="form-check-label" for="engineOperationPass">Pass</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="acceleration" id="accelerationFail" value="Fail">
-                        <label class="form-check-label" for="accelerationFail">Fail</label>
+                        <input class="form-check-input" type="radio" name="engineOperation" id="engineOperationFail" value="Fail">
+                        <label class="form-check-label" for="engineOperationFail">Fail</label>
                     </div>
                     <div class="invalid-feedback">Please select an option.</div>
                 </div>
                 <div class="mb-3">
-                    <label>Braking <span data-bs-toggle="tooltip" title="Evaluate the vehicle's braking performance during the test drive.">?</span></label>
+                    <label>Transmission Operation</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="braking" id="brakingPass" value="Pass" required>
-                        <label class="form-check-label" for="brakingPass">Pass</label>
+                        <input class="form-check-input" type="radio" name="transmissionOperation" id="transmissionOperationPass" value="Pass" required>
+                        <label class="form-check-label" for="transmissionOperationPass">Pass</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="braking" id="brakingFail" value="Fail">
-                        <label class="form-check-label" for="brakingFail">Fail</label>
-                    </div>
-                    <div class="invalid-feedback">Please select an option.</div>
-                </div>
-                <div class="mb-3">
-                    <label>Steering Response <span data-bs-toggle="tooltip" title="Evaluate the vehicle's steering response during the test drive.">?</span></label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="steeringResponse" id="steeringResponsePass" value="Pass" required>
-                        <label class="form-check-label" for="steeringResponsePass">Pass</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="steeringResponse" id="steeringResponseFail" value="Fail">
-                        <label class="form-check-label" for="steeringResponseFail">Fail</label>
+                        <input class="form-check-input" type="radio" name="transmissionOperation" id="transmissionOperationFail" value="Fail">
+                        <label class="form-check-label" for="transmissionOperationFail">Fail</label>
                     </div>
                     <div class="invalid-feedback">Please select an option.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="testDriveNotes" class="form-label">Other Notes <span data-bs-toggle="tooltip" title="Any additional notes regarding the test drive.">?</span></label>
-                    <textarea class="form-control" id="testDriveNotes" name="testDriveNotes" rows="3"></textarea>
+                    <label>Other Notes</label>
+                    <textarea class="form-control" id="roadTestNotes" name="roadTestNotes" rows="3"></textarea>
                 </div>
                 <button type="button" class="btn btn-secondary" onclick="previousSection()">Previous</button>
                 <button type="button" class="btn btn-primary" onclick="nextSection()">Next</button>
@@ -232,7 +220,7 @@
             <div class="form-section" data-step="6">
                 <h4>Upload Images</h4>
                 <div class="mb-3">
-                    <label for="images" class="form-label">Upload Images <span data-bs-toggle="tooltip" title="You can upload up to 50 images to be attached to the report.">?</span></label>
+                    <label for="images" class="form-label">Upload Images</label>
                     <input class="form-control" type="file" id="images" name="images" accept="image/*" multiple>
                     <div class="invalid-feedback">Please upload at least one image.</div>
                 </div>
